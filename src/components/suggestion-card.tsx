@@ -2,7 +2,15 @@
 import React from "react";
 import styles from "./suggestion-card.module.css";
 
-export default function SuggestionCard({ suggestion, handleClick }: any) {
+interface SuggestionCardProps {
+  handleClick: (suggestion: string) => void;
+  suggestion: string;
+}
+
+export default function SuggestionCard({
+  suggestion,
+  handleClick,
+}: SuggestionCardProps) {
   return (
     <div
       className={styles.suggestionCard}

@@ -1,8 +1,12 @@
 import React from "react";
 import styles from "./message.module.css";
 import Image from "next/image";
+interface MessageProps {
+  isUserMessage: boolean;
+  text: string;
+}
 
-export default function Message({ isUserMessage, text }: any) {
+export default function Message({ isUserMessage, text }: MessageProps) {
   return (
     <div className={isUserMessage ? styles.userMessage : styles.botMessage}>
       {!isUserMessage ? (

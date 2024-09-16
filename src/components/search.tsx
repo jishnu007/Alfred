@@ -7,7 +7,7 @@ import Message from "./message";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function Search({ searchText: string }: any) {
+export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const [messages, setMessages] = useState<
     { text: string; isUserMessage: boolean }[]
@@ -97,6 +97,7 @@ export default function Search({ searchText: string }: any) {
           <div className={styles.suggestions}>
             {suggestions.map((suggestion, index) => (
               <SuggestionCard
+                key={index}
                 suggestion={suggestion}
                 handleClick={handleSuggestionClick}
                 data-aos="fade-down"
