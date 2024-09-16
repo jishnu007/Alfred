@@ -1,0 +1,104 @@
+.searchForm {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1e2d0;
+  border-radius: 50px;
+  padding: 12px 20px;
+  background-color: #f9f7ff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s ease-in, width 0.35s ease-out; /* Smooth transition */
+  /* Start scaled down */ /* Start invisible */
+  transform-origin: center;
+  opacity: 0;
+  width: 75%;
+}
+.searchFormOuter {
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.searchInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #00796b;
+}
+.searchForm.scaled {
+  /* Scale to normal size */
+  opacity: 1; /* Make the search bar visible */
+  width: 100%; /* Final width */
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+  font-size: 15px;
+}
+
+.sendButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s;
+  transition: 1s;
+}
+
+.sendIcon {
+  height: 24px;
+  width: 24px;
+  color: #0070f3;
+}
+
+.sendButton:hover .sendIcon {
+  color: #005bb5;
+}
+.suggestions {
+  margin-bottom: 8px;
+  display: flex;
+  max-width: 800px;
+}
+.messagesContainer {
+  margin-top: 80px;
+  display: flex;
+  width: 800px;
+  flex-direction: column;
+  flex: 1;
+}
+
+.logoContainer {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+@keyframes scaleIn {
+  0% {
+    width: 0; /* Start with 0 width */
+  }
+  100% {
+    width: 100%; /* Final width */
+  }
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+}
