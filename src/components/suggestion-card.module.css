@@ -1,27 +1,28 @@
-/* .suggestion-card{
-    width: 50%;
-
-    padding: 8px;
-
-    background: red;
-} */
 .suggestionCard {
-  background-color: #e0f7fa;
+  background-color: #f9f7ff;
   border-radius: 12px;
   padding: 12px 24px;
   margin: 8px;
   cursor: pointer;
   font-size: 16px;
-  color: #00796b;
+  color: #1a1f16;
   font-weight: 500;
-  transition: background-color 0.2s, transform 0.2s;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   min-height: 180px;
   width: calc(100% / 4);
+  @media (max-width: 900px) {
+    width: 95%;
+    min-height: auto;
+  }
 }
 
 .suggestionCard:hover {
-  background-color: #b2ebf2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  /* background-color: #b2ebf2; */
+  background: linear-gradient(145deg, #f9f7ff, #e0d9ff);
   transform: translateY(-2px);
 }
 

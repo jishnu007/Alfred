@@ -12,13 +12,27 @@
   opacity: 0;
   width: 75%;
 }
+
+.searchAndSuggestionContainer{
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+}
 .searchFormOuter {
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
+  @media (max-width: 768px) {
+    width: 95%;
+    margin-bottom: 18px;
+  }
+  
 }
+ 
 
 .searchInput {
   flex-grow: 1;
@@ -27,7 +41,7 @@
   padding: 10px 15px;
   font-size: 16px;
   background-color: transparent;
-  color: #00796b;
+  color: #1a1f16;
 }
 .searchForm.scaled {
   /* Scale to normal size */
@@ -57,29 +71,55 @@
 .sendIcon {
   height: 24px;
   width: 24px;
-  color: #0070f3;
+  color: #1a1f16;
 }
 
 .sendButton:hover .sendIcon {
-  color: #005bb5;
+  color: #1a1f16;
 }
 .suggestions {
   margin-bottom: 8px;
   display: flex;
   max-width: 800px;
+  @media (max-width: 900px) {
+    font-size: 24px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .messagesContainer {
-  margin-top: 80px;
+  // margin-top: 80px;
   display: flex;
   width: 800px;
   flex-direction: column;
   flex: 1;
+  max-height: calc(100vh - 152px);
+  overflow-y: auto;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    margin-left:16px;
+    margin-right:16px;
+  }
+}
+.searchAndSuggestionContainer{
+  display: flex;
+  flex-direction: column;
+}
+.logo{
+  //   @media (max-width: 900px) {
+  //     display: none;
+  // }
 }
 
 .logoContainer {
   display: flex;
   flex: 1;
   align-items: center;
+      margin-top: 110px;
+
 }
 
 @keyframes scaleIn {

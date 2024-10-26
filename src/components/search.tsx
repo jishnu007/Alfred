@@ -1,20 +1,35 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import styles from "./search.module.css";
+
+import React, {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useState,
+} from "react";
+import styles from "./search.module.scss";
 import Image from "next/image";
 import SuggestionCard from "./suggestion-card";
 import Message from "./message";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function Search() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [messages, setMessages] = useState<
-    { text: string; isUserMessage: boolean }[]
-  >([]);
-  const [showSuggestions, setShowSuggestions] = useState(true); // Show suggestions initially
+interface MessageType {
+  text: string;
+  isUserMessage: boolean;
+}
 
+interface SearchProps {}
+
+export interface SearchRef {
+  handleClearChat: () => void;
+}
+
+const Search = forwardRef<SearchRef, SearchProps>((props, ref) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [messages, setMessages] = useState<MessageType[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(true); // Show suggestions initially
   const [isScaled, setIsScaled] = useState(false);
+
   useEffect(() => {
     AOS.init();
     // AOS.refresh();
@@ -41,9 +56,11 @@ export default function Search() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (searchTerm == "") return;
+    if (searchTerm === "") return;
+
     // Perform search action or log the search term
     console.log("Searching for:", searchTerm);
+
     // Add the user's message to the chat
     const newMessage = { text: searchTerm, isUserMessage: true };
     setMessages([...messages, newMessage]);
@@ -65,13 +82,24 @@ export default function Search() {
   const handleSuggestionClick = (searchText: string) => {
     setSearchTerm(searchText);
   };
+
+  const handleClearChat = () => {
+    console.log("comn herer ...............");
+    setMessages([]);
+    setShowSuggestions(true);
+  };
+
+  useImperativeHandle(ref, () => ({
+    handleClearChat,
+  }));
+
   return (
     <>
-      {messages.length == 0 && (
+      {messages.length === 0 && (
         <div className={styles.logoContainer}>
           <Image
             className={styles.logo}
-            src="/images/alfred_logo2.png"
+            src="/images/logo3.png"
             alt="Alfred logo"
             width={350}
             height={300}
@@ -81,7 +109,7 @@ export default function Search() {
           />
         </div>
       )}
-      {messages ? (
+      {messages.length !== 0 ? (
         <div className={styles.messagesContainer}>
           {messages.map((message, index) => (
             <Message
@@ -92,7 +120,7 @@ export default function Search() {
           ))}
         </div>
       ) : null}
-      <div>
+      <div className={styles.searchAndSuggestionContainer}>
         {showSuggestions ? (
           <div className={styles.suggestions}>
             {suggestions.map((suggestion, index) => (
@@ -146,4 +174,7 @@ export default function Search() {
       </div>
     </>
   );
-}
+});
+
+Search.displayName = "Search";
+export default Search;

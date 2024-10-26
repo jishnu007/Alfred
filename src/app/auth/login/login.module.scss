@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+.googleSignInButton,
+.googleSignInButton div[role="button"] {
+  display: flex;
+  width: 100% !important;
+  margin-bottom: 12px;
+}
+.divideror {
+  margin: 12px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formContainer {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow:
+    0 6.4px 14.4px 0 rgba(0, 0, 0, 0.13),
+    0 1.2px 3.6px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #111;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    .inputGroup {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+        color: #111;
+      }
+
+      input {
+        padding: 0.75rem;
+        border-radius: 4px;
+        border: 1px solid #d1e2d0;
+        font-size: 1rem;
+        outline: none;
+        background: #f9f7ff;
+      }
+
+      input:focus {
+        border-color: #0070f3;
+      }
+    }
+
+    .submitButton {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      background-color: lightslategrey;
+
+      &:hover {
+        background-color: #005bb5;
+      }
+    }
+    .footerText {
+      font-size: 0.825rem;
+      color: #111;
+      font-weight: 400;
+      padding-top: 4px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        color: #005bb5;
+      }
+    }
+  }
+}
