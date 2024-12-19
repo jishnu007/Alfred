@@ -15,15 +15,6 @@ function Navbar() {
     <div className={styles.navbarOuter}>
       <nav className={styles.navbar}>
         <div className={styles.navbarContainer}>
-          {/* <div className={styles.logo}>
-            <Image
-              src="/images/logo3.png"
-              alt="Alfred logo"
-              width={50}
-              height={50}
-              priority
-            />
-          </div> */}
           <div className={styles.hamburger} onClick={toggleMenu}>
             <span className={isOpen ? styles.bar1 : ""}></span>
             <span className={isOpen ? styles.bar2 : ""}></span>
@@ -31,14 +22,9 @@ function Navbar() {
           </div>
           <ul className={`${styles.navLinks} ${isOpen ? styles.open : ""}`}>
             <li>
-              <a href="#">Nav 1</a>
+              <a href="/">Overview</a>
             </li>
-            <li>
-              <a href="#">Nav 2</a>
-            </li>
-            <li>
-              <a href="#">Nav 3</a>
-            </li>
+
             {!user ? (
               <li>
                 <a href="/auth/login" className={styles.login}>

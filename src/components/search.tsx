@@ -97,7 +97,8 @@ const Search = forwardRef<SearchRef, SearchProps>((props, ref) => {
     <>
       {messages.length === 0 && (
         <div className={styles.logoContainer}>
-          <Image
+          <h1 className={styles.title}>3am Friend</h1>
+          {/* <Image
             className={styles.logo}
             src="/images/logo3.png"
             alt="Alfred logo"
@@ -106,7 +107,7 @@ const Search = forwardRef<SearchRef, SearchProps>((props, ref) => {
             priority
             data-aos="fade-in"
             data-aos-duration="1000"
-          />
+          /> */}
         </div>
       )}
       {messages.length !== 0 ? (

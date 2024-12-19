@@ -31,7 +31,7 @@ const SignUp = () => {
     try {
       const res = await googleSignIn();
       if (res) {
-        router.push("/");
+        router.push("/chat");
       }
     } catch (error) {
       console.log("error", error);
