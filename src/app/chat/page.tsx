@@ -2,7 +2,7 @@
 import styles from "../page.module.scss";
 import Search from "@/components/search";
 // import AOS from "aos";
-import "aos/dist/aos.css";
+// import "aos/dist/aos.css";
 // import { useEffect } from "react";
 import Navbar from "../navbar";
 

@@ -10,8 +10,8 @@ import styles from "./search.module.scss";
 import Image from "next/image";
 import SuggestionCard from "./suggestion-card";
 import Message from "./message";
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 
 interface MessageType {
   text: string;
@@ -30,10 +30,10 @@ const Search = forwardRef<SearchRef, SearchProps>((props, ref) => {
   const [showSuggestions, setShowSuggestions] = useState(true); // Show suggestions initially
   const [isScaled, setIsScaled] = useState(false);
 
-  useEffect(() => {
-    AOS.init();
-    // AOS.refresh();
-  }, []);
+  // useEffect(() => {
+  //   AOS.init();
+  //   // AOS.refresh();
+  // }, []);
 
   useEffect(() => {
     // Set isScaled to true after component mounts
@@ -129,7 +129,7 @@ const Search = forwardRef<SearchRef, SearchProps>((props, ref) => {
                 key={index}
                 suggestion={suggestion}
                 handleClick={handleSuggestionClick}
-                data-aos="fade-down"
+                // data-aos="fade-down"
               />
             ))}
           </div>
