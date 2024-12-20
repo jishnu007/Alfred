@@ -31,6 +31,7 @@
   /* justify-content: space-between; */
   width: 100%;
   min-height: 100vh;
+  max-height: 100vh;
 }
 
 .suggestions {
@@ -126,6 +127,9 @@ a.secondary {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        max-width: -webkit-fill-available;
+        margin: 0 16px;
+
         .primaryButton {
           display: flex;
           justify-content: center;
