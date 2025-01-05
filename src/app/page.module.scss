@@ -30,8 +30,8 @@
   align-items: center;
   /* justify-content: space-between; */
   width: 100%;
-  max-height: 100vh;
-  height: 100vh;
+  max-height: 100svh;
+  height: 100svh;
   overflow-y: hidden;
 }
 
@@ -106,7 +106,7 @@ a.secondary {
 
 .landingPage {
   .firstViewport {
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,7 +176,7 @@ a.secondary {
 
   .secondViewport {
     scroll-snap-align: start;
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
