@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import styles from "./suggestion-card.module.css";
+import styles from "./suggestion-card.module.scss";
 
 interface SuggestionCardProps {
   handleClick: (suggestion: string) => void;

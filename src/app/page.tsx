@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import { FaHeadset, FaUserTie, FaShieldAlt } from "react-icons/fa"; // Icons for cards
-import { FaArrowRight } from "react-icons/fa"; // Button icon
+import { FaHeadset, FaUserTie, FaShieldAlt } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import throttle from "lodash/throttle";
 import styles from "./page.module.scss";
 import Link from "next/link";
@@ -28,8 +28,6 @@ const cardData = [
 
 const LandingPage = () => {
   const [isVisible, setIsVisible] = useState(false);
-
-  // Optimized scroll event handler with throttling
   const handleScroll = useCallback(
     throttle(() => {
       const element = document.getElementById("second-viewport");
@@ -49,7 +47,6 @@ const LandingPage = () => {
 
   return (
     <div className={styles.landingPage}>
-      {/* First Viewport */}
       <div className={styles.firstViewport}>
         <div className={styles.content}>
           <h1 className={styles.title}>3am Friend</h1>
@@ -67,8 +64,6 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-
-      {/* Second Viewport */}
       <motion.div
         id="second-viewport"
         initial={{ opacity: 0, y: 50 }}

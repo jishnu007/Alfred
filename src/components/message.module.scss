@@ -9,9 +9,13 @@
   border-radius: 1.5rem;
   margin-bottom: 5px;
   width: auto;
-  min-height: 46px;
+  word-wrap: break-word;
+  // min-height: 46px;
 
-  /* max-width: 60%; */
+  max-width: 60%;
+  @media (max-width: 800px) {
+    max-width: 85%;
+  }
 }
 
 .botMessage {
